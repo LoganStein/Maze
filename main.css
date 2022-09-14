@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+.head-section {
+    margin: 2em 0 1.5em 3em;
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1.5em;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .2em;
+}
+
+.written-section{
+    width: 75%;
+    margin: 2em auto 1.5em auto;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    
+}
+
+.written-section p{
+    margin-bottom: 1em;
+}
+
+.written-section h2{
+    margin-bottom: .5em;
+}

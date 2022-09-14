@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Maze 2.0</title>
+</head>
+<body>
+    <div class="head-section">
+        <div class="head-text">
+            <h1>Welcome to my maze!</h1>
+            <h3>A visualization of search algorithms.</h3>
+        </div>
+    </div>
+        <div class="options">
+            <div>
+                <input type="radio" name="color" value="startPoint"> Start Point</input>
+            </div>
+            <div>
+                <input type="radio" name="color" value="endPoint"> End Point</input>
+            </div>
+            <div>
+                <input type="radio" name="color" checked value="wall"> Wall</input>
+            </div>
+            <select id="wallFreq" onchange="generateWalls()">
+                <option value="0">Custom Walls</option>
+                <option value=".1">10%</option>
+                <option value=".2">20%</option>
+                <option value=".3">30%</option>
+                <option value=".4">40%</option>
+                <option value=".5">50% (allow diagonals)</option>
+            </select>
+            <select id="heuristic">
+                <option value="Manhattan">Manhattan</option>
+                <option value="Dijkstra">Dijkstra</option>
+            </select>
+            <div>
+                <input type="checkbox" id="diagonals" value="diagonalsEnabled">Allow Diagonals
+            </div>
+        </div>
+
+    <center>
+        <canvas style="border: 2px solid black;" id="main-canvas" ></canvas>
+    </center>
+    <div class="buttons">
+        <button onclick="window.location.reload()">reset</button>
+        <button onclick="run()">run</button>
+    </div>
+    <div class="written-section">
+
+        <h2>How to Use</h2>
+        <p>To start, select the Start Point button above and click a square on the grid. 
+            Next, select the End Point button and click a different square on the grid. Then, hit run. The orange squares are the cells that the algorithm searched while the blue squares are the cells in the path from start to finish.
+            The blue path is guarenteed to be a shortest path but there will sometimes be many shortest paths.</p>
+        <p>You can click and drag while the Wall button is selected to add obstacles for the algorithm to navigate around. Alternatively, you can click the drop down menu titled Custom Walls and select a frequency and it will generate Walls
+            placed randomly at that frequency. 
+            Checking the box that says Allow Diagonals will enable diagonal path finding in the algorithm. This generates much shorter paths.
+        </p>
+        <h2>A-Star Algorithm</h2>
+        <p>The A-star algorithm is a greedy path finding algorithm. It is very similar to Dijkstra's algorithm but it uses a 
+            <a href="https://en.wikipedia.org/wiki/Heuristic_(computer_science)#:~:text=A%20heuristic%20function%2C%20also%20simply%20called%20a%20heuristic%2C%20is%20a%20function%20that%20ranks%20alternatives%20in%20search%20algorithms%20at%20each%20branching%20step%20based%20on%20available%20information%20to%20decide%20which%20branch%20to%20follow.%20For%20example%2C%20it%20may%20approximate%20the%20exact%20solution.%5B" target="_blank">heuristic</a>
+             to decide which cells to search first making it a best-first search algorithm. 
+             It's a great algorithm because its fast and always produces the shortest path. 
+             One downside is the space complexity. 
+             This algorithm stores each searched node in memory, so larger problems take much more memory space.
+        </p>
+        <h2>Why did I make this?</h2>
+        <p>
+            In my classes in college, we learned about a lot of different algorithms for solving various problems and I learn best by doing. 
+            Any time I can make a real project with real code I try to take that opportunity because it helps me find the errors in my intuition and better understand how/why the algorithm works by seeing it in action.
+            I made this program to get a better grasp on heuristics, greedy algorithms, data structures, and to better understand this specific algorthm.
+
+        </p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
